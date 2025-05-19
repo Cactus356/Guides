@@ -69,8 +69,7 @@ sudo useradd --system --no-create-home --shell /usr/sbin/nologin dnscrypt
 ```
 Create the ramfs dnscp will run from. We'll make the one for AGH now as well.
 ```
-sudo mkdir -p /ramdisk-dnscrypt-proxy
-sudo mkdir -p /ramdisk-adguardhome
+sudo mkdir -p /ramdisk-dnscrypt-proxy /ramdisk-adguardhome
 ```
 Download the latest dnscp from [here](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.1.8) and copy it to /opt/ or a folder of your choosing.
 ```
