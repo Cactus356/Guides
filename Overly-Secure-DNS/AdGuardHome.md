@@ -24,7 +24,7 @@ To top it all off, we don't want anything saved to disk. What use is routing eve
 
 In this guide, I'll be using a non-root user called `user`, using sudo when required for certain commands. If you only have a root user, log in and run the following to create a new user called `user` and give it sudo privileges:
 ```
-useradd -m user
+useradd -m -s /bin/bash user
 apt install sudo -y
 usermod -aG sudo user
 passwd user
