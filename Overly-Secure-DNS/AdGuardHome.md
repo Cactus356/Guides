@@ -27,6 +27,7 @@ In this guide, I'll be using a non-root user called `user`, using sudo when requ
 useradd -m user
 apt install sudo -y
 usermod -aG sudo user
+passwd user
 ```
 
 ## Setting up Tor
