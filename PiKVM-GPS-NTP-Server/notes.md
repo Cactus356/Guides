@@ -491,7 +491,7 @@ Set the perms on the cert
 
 Verify the current conf, should look close to this
 
-    server 10.1.1.150 iburst nts prefer
+    server 10.1.1.150 nts iburst prefer
     server time.cloudflare.com nts iburst
     server time.apple.com iburst
     server time.nist.gov
