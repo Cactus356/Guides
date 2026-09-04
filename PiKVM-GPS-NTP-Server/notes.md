@@ -172,8 +172,9 @@ Should output something like
      refclock PPS /dev/pps0 refid PPS lock NMEA poll 3 prefer
      
      # Backup internet servers
-     # server time.nist.gov iburst
-     # server time.cloudflare.com iburst nts
+     # server time.cloudflare.com nts iburst
+     # server time.apple.com iburst
+     # server time.nist.gov
      
      # Logging
      logdir /tmp/chrony
@@ -424,7 +425,7 @@ Verify the current conf, should look close to this
 
     refclock SHM 0 refid NMEA offset 0.000 precision 1e-3 poll 3 noselect
     refclock PPS /dev/pps0 refid PPS lock NMEA poll 3 prefer
-    server time.cloudflare.com iburst
+    server time.cloudflare.com nts iburst
     server time.apple.com iburst
     server time.nist.gov
     driftfile /var/lib/chrony/drift
