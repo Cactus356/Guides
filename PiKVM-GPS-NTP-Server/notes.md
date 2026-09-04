@@ -286,7 +286,7 @@ We'll now add a couple of public NTP servers as a backup to the GPS
     refclock PPS /dev/pps0 refid PPS lock NMEA poll 3 prefer
     
     # Backup internet servers
-    server time.cloudflare.com iburst
+    server time.cloudflare.com nts iburst
     server time.apple.com iburst
     server time.nist.gov
 
@@ -327,7 +327,7 @@ Lets set up a client.
     server 10.1.1.150 iburst prefer
     
     # Backup internet servers
-    server time.cloudflare.com iburst
+    server time.cloudflare.com nts iburst
     server time.apple.com iburst
     server time.nist.gov
 
@@ -492,7 +492,7 @@ Set the perms on the cert
 Verify the current conf, should look close to this
 
     server 10.1.1.150 iburst nts prefer
-    server time.cloudflare.com iburst
+    server time.cloudflare.com nts iburst
     server time.apple.com iburst
     server time.nist.gov
     ntstrustedcerts /etc/chrony/ca.crt
@@ -516,14 +516,14 @@ Verify the current conf, should look close to this
     Name/IP address             Mode KeyID Type KLen Last Atmp  NAK Cook CLen
     =========================================================================
     10.1.1.150                   NTS     1   30  128  20m    0    0    8   64
-    time.cloudflare.com            -     0    0    0    -    0    0    0    0
+    time.cloudflare.com          NTS     1   30  128 403m    0    0    8   64
     time.apple.com                 -     0    0    0    -    0    0    0    0
     time.nist.gov                  -     0    0    0    -    0    0    0    0
     user@pve:~$ sudo chronyc selectdata 10.1.1.150
     S Name/IP Address        Auth COpts EOpts Last Score     Interval  Leap
     =======================================================================
     * 10.1.1.150                Y -P--- -PTR-    0   1.0   -83us   +86us  N
-    T time.cloudflare.com       N ----- -----    0   1.0   -19ms   +19ms  N
+    P time.cloudflare.com       Y ----- --TR-    1   1.0   -21ms   +21ms  N
     T ussjc2-ntp-002.aaplimg.c> N ----- -----    0   1.0   -29ms   +26ms  N
     T time-b-wwv.nist.gov       N ----- -----    6   1.0   -19ms   +23ms  N
 
