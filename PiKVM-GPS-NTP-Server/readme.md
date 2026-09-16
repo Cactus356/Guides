@@ -536,6 +536,6 @@ Now our PiKVM is a fully running GPS NTP server with NTS enabled.
 
 **Web Dashboard**
 
-Jeff Gerrling made a web dashboard for his [PPS watch project](https://github.com/geerlingguy/pps-watch-gpsmon/blob/master/README.md). I kept the AI slop train going, using ChatGPT to edit his script to work with my hardware. I also made the side panel wider for two columns, made the sky view bigger, and added two columns for chrony tracking and chrony clients. I plotted the satellites on the big map as well, although I'm not sure if this is working correctly and may need updating.
+Jeff Gerrling made a web dashboard for his [PPS watch project](https://github.com/geerlingguy/pps-watch-gpsmon/blob/master/README.md). I kept the AI slop train going, using ChatGPT to edit his script to work with my hardware. I also made the side panel wider for two columns, made the sky view bigger, and added two columns for chrony tracking and chrony clients. I plotted the satellites on the big map as well, although I'm not sure if this is working correctly and may need updating. [Code here](https://github.com/Cactus356/Guides/blob/main/PiKVM-GPS-NTP-Server/gps_map.py).
 
 ![](https://i.imgur.com/j7N5ltX.png)
